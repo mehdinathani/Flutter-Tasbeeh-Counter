@@ -61,16 +61,16 @@ class _CounterViewState extends State<CounterView> {
   displayZikar() {
     setState(() {
       if (counter > 34 && counter < 68) {
-        zikrImageUrl = "assets/images/2.avif";
+        zikrImageUrl = "assets/images/2.jpg";
 
         currentZikar = Zikar.Alhamdulillah;
         zikrSize = 33;
       } else if (counter > 67) {
-        zikrImageUrl = "assets/images/3.avif";
+        zikrImageUrl = "assets/images/3.jpg";
         currentZikar = Zikar.SubhanAllah;
         zikrSize = 33;
       } else if (counter > 0) {
-        zikrImageUrl = "assets/images/1.avif";
+        zikrImageUrl = "assets/images/1.jpg";
         currentZikar = Zikar.AllahHuAkbar;
         zikrSize = 34;
       } else {
@@ -101,8 +101,7 @@ class _CounterViewState extends State<CounterView> {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                    "https://i.pinimg.com/originals/b3/9f/a7/b39fa7a6255973e44eb2027a33d78356.jpg"),
+                image: AssetImage("assets/images/background_image.jpg"),
                 fit: BoxFit.fill,
                 opacity: 0.7,
               ),
@@ -123,9 +122,10 @@ class _CounterViewState extends State<CounterView> {
                   roundedCap: (index, _) => true,
                   child: Center(
                     child: CircleAvatar(
-                        radius: 90, backgroundImage: AssetImage(zikrImageUrl)
-                        //NetworkImage(zikrImageUrl),
-                        ),
+                      radius: 90,
+                      backgroundImage: AssetImage(zikrImageUrl),
+                      //NetworkImage(zikrImageUrl),
+                    ),
                   ),
                 ),
                 const Expanded(child: SizedBox(height: 10)),
